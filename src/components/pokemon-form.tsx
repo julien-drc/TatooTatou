@@ -99,13 +99,13 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon, isEditForm }) => {
 
     // Validator picture
     if(isAddForm()) {
-      const start = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail"
+      const start = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/"
       const end = ".png"
 
       if(!form.picture.value.startsWith(start) || !form.picture.value.endsWith(end)) {
         const errorMsg: string = "L'url n'est pas valide."
         const newField: Field = { value: form.picture.value, error: errorMsg, isValid: false}
-        newForm = { ...form, ...{ picture: newField }}
+        newForm = { ...form, ...{ picture: newField } }
       } else {
         const newField: Field = { value: form.picture.value, error: '', isValid: true }
         newForm = { ...form, ...{ picture: newField } }
